@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} | {{ single_product.name  }}{% endblock %}
+
+{% block content %}
+    <section class="home-slider owl-carousel">
+
+      <div class="slider-item" style="background-image: url(/static/images/bg_3.jpg);" data-stellar-background-ratio="0.5">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text justify-content-center align-items-center">
+
+            <div class="col-md-7 col-sm-12 text-center ftco-animate">
+            	<h1 class="mb-3 mt-5 bread">Product Detail</h1>
+	            <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'index' %}">Home</a></span> <span>Product Detail</span></p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-lg-6 mb-5 ftco-animate">
+					
+    				<img class="card-img-top" src="{{ single_product.photo_main.url }}" alt="">
+    			</div>
+    			<div class="col-lg-6 product-details pl-md-5 ftco-animate">
+    				<h3>{{ single_product.name }}</h3>
+    				<p class="price"><span>₹{{ single_product.price }}</span></p>
+    				<p>{{ single_product.description }}</p>
+    				
+						<div class="row mt-4">
+							<div class="col-md-6">
+								<div class="form-group d-flex">
+		              <div class="select-wrap">
+	                  
+	                  
+	                	</div>
+		            </div>
+							</div>
+						
+          	<p><a href="{% url 'add_to_cart' single_product.id %}" class="btn btn-primary py-3 px-5">Add to Cart</a></p>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+    
+{% endblock %}
+  

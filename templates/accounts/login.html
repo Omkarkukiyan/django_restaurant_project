@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} | Login{% endblock %}
+
+{% block content %}
+
+
+<section class="ftco-appointment">
+			<div class="overlay"></div>
+    		<div class="container-wrap">
+    		<div class="row no-gutters d-md-flex align-items-center">
+    			<div  class="col-md-6 appointment ftco-animate">
+	    			<h3 class="mb-3">Login</h3>
+                    {% include 'accounts/_alerts.html' %}
+                    <form action="{% url 'login' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password2">Password</label>
+                            <input type="password" name="password" class="form-control" required>
+                        </div>
+                            <input type="submit" value="Login" class="btn btn-secondary btn-block">
+                    </form>
+	    		</div>    			
+    		</div>
+    	</div>
+</section>
+
+{% endblock content %}
