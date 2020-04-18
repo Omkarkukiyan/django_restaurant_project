@@ -19,4 +19,4 @@ A python and django powerd web application.
 
 **Run project**
 
-	python manage.py
+	python manage.py runserver
